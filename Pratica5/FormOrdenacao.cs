@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Pratica5 {
     public partial class FormOrdenacao : Form {
-        int[] vet = new int[500]; // vetor interno para a animação
+        int[] vet = new int[1000]; // vetor interno para a animação
 
         public FormOrdenacao() {
             InitializeComponent();
@@ -67,9 +67,40 @@ namespace Pratica5 {
                MessageBoxIcon.Information);
         }
 
-        private void bolhaToolStripMenuItem1_Click_1(object sender, EventArgs e) {
-            
-            int[] vetor = new int[1000]; // TODO (tamanho deverá ser escolhido pelo usuário)
+        private void seleçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            iniciaAnimacao(() => OrdenacaoGrafica.Selecao(vet, panel));
+        }
+
+        private void inserçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            iniciaAnimacao(() => OrdenacaoGrafica.Insercao(vet, panel));
+        }
+
+        private void shellsortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            iniciaAnimacao(() => OrdenacaoGrafica.ShellSort(vet, panel));
+        }
+
+        private void heapsortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            iniciaAnimacao(() => OrdenacaoGrafica.HeapSort(vet, panel));
+        }
+
+        private void quicksortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            iniciaAnimacao(() => OrdenacaoGrafica.QuickSort(vet, panel));
+        }
+
+        private void mergesortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            iniciaAnimacao(() => OrdenacaoGrafica.MergeSort(vet, panel));
+        }
+
+        private void bolhaToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+
+            int[] vetor = new int[10000]; // TODO (tamanho deverá ser escolhido pelo usuário)
             Preenchimento.Aleatorio(vetor, 1000); // TODO (preenchimento inicial deverá ser escolhido pelo usuário)
             var stopwatch = new Stopwatch();
             stopwatch.Start(); // inicia cronômetro
@@ -77,12 +108,132 @@ namespace Pratica5 {
             stopwatch.Stop(); // interrompe cronômetro
             long elapsed_time = stopwatch.ElapsedMilliseconds; // calcula o tempo decorrido
             MessageBox.Show(this,
-                  "Tamanho do vetor: TODO" +
-                  "\nOrdenação inicial: TODO" +
+                  "Tamanho do vetor: 100000" +
+                  "\nOrdenação inicial: Aleatorio" +
                   "\n\nTempo de execução: " + String.Format("{0:F4} seg", elapsed_time / 1000.0) +
-                  "\nNº de comparações: TODO" +
-                  "\nNº de trocas: TODO",
+                  "\nNº de comparações: " + OrdenacaoEstatistica.cont_c +
+                  "\nNº de trocas: " + OrdenacaoEstatistica.cont_t,
                   "Estatísticas do Método Bolha",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information);
+        }
+
+        private void inserçãoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int[] vetor = new int[10000]; // TODO (tamanho deverá ser escolhido pelo usuário)
+            Preenchimento.Aleatorio(vetor, 1000); // TODO (preenchimento inicial deverá ser escolhido pelo usuário)
+            var stopwatch = new Stopwatch();
+            stopwatch.Start(); // inicia cronômetro
+            OrdenacaoEstatistica.Insercao(vetor);
+            stopwatch.Stop(); // interrompe cronômetro
+            long elapsed_time = stopwatch.ElapsedMilliseconds; // calcula o tempo decorrido
+            MessageBox.Show(this,
+                  "Tamanho do vetor: 10000" +
+                  "\nOrdenação inicial: Aleatorio" +
+                  "\n\nTempo de execução: " + String.Format("{0:F4} seg", elapsed_time / 1000.0) +
+                  "\nNº de comparações: " + OrdenacaoEstatistica.cont_c +
+                  "\nNº de trocas: " + OrdenacaoEstatistica.cont_t,
+                  "Estatísticas do Método Inserção",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information);
+        }
+
+        private void seleçãoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int[] vetor = new int[10000]; // TODO (tamanho deverá ser escolhido pelo usuário)
+            Preenchimento.Aleatorio(vetor, 1000); // TODO (preenchimento inicial deverá ser escolhido pelo usuário)
+            var stopwatch = new Stopwatch();
+            stopwatch.Start(); // inicia cronômetro
+            OrdenacaoEstatistica.Selecao(vetor);
+            stopwatch.Stop(); // interrompe cronômetro
+            long elapsed_time = stopwatch.ElapsedMilliseconds; // calcula o tempo decorrido
+            MessageBox.Show(this,
+                  "Tamanho do vetor: 10000" +
+                  "\nOrdenação inicial: Aleatorio" +
+                  "\n\nTempo de execução: " + String.Format("{0:F4} seg", elapsed_time / 1000.0) +
+                  "\nNº de comparações: " + OrdenacaoEstatistica.cont_c +
+                  "\nNº de trocas: " + OrdenacaoEstatistica.cont_t,
+                  "Estatísticas do Método Seleção",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information);
+        }
+
+        private void shellsortToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int[] vetor = new int[10000]; // TODO (tamanho deverá ser escolhido pelo usuário)
+            Preenchimento.Aleatorio(vetor, 1000); // TODO (preenchimento inicial deverá ser escolhido pelo usuário)
+            var stopwatch = new Stopwatch();
+            stopwatch.Start(); // inicia cronômetro
+            OrdenacaoEstatistica.ShellSort(vetor);
+            stopwatch.Stop(); // interrompe cronômetro
+            long elapsed_time = stopwatch.ElapsedMilliseconds; // calcula o tempo decorrido
+            MessageBox.Show(this,
+                  "Tamanho do vetor: 10000" +
+                  "\nOrdenação inicial: Aleatorio" +
+                  "\n\nTempo de execução: " + String.Format("{0:F4} seg", elapsed_time / 1000.0) +
+                  "\nNº de comparações: " + OrdenacaoEstatistica.cont_c +
+                  "\nNº de trocas: " + OrdenacaoEstatistica.cont_t,
+                  "Estatísticas do Método Shellsort",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information);
+        }
+
+        private void heapsortToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int[] vetor = new int[10000]; // TODO (tamanho deverá ser escolhido pelo usuário)
+            Preenchimento.Aleatorio(vetor, 1000); // TODO (preenchimento inicial deverá ser escolhido pelo usuário)
+            var stopwatch = new Stopwatch();
+            stopwatch.Start(); // inicia cronômetro
+            OrdenacaoEstatistica.HeapSort(vetor);
+            stopwatch.Stop(); // interrompe cronômetro
+            long elapsed_time = stopwatch.ElapsedMilliseconds; // calcula o tempo decorrido
+            MessageBox.Show(this,
+                  "Tamanho do vetor: 10000" +
+                  "\nOrdenação inicial: Aleatorio" +
+                  "\n\nTempo de execução: " + String.Format("{0:F4} seg", elapsed_time / 1000.0) +
+                  "\nNº de comparações: " + OrdenacaoEstatistica.cont_c +
+                  "\nNº de trocas: " + OrdenacaoEstatistica.cont_t,
+                  "Estatísticas do Método HeapSort",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information);
+        }
+
+        private void quicksortToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int[] vetor = new int[10000]; // TODO (tamanho deverá ser escolhido pelo usuário)
+            Preenchimento.Aleatorio(vetor, 1000); // TODO (preenchimento inicial deverá ser escolhido pelo usuário)
+            var stopwatch = new Stopwatch();
+            stopwatch.Start(); // inicia cronômetro
+            OrdenacaoEstatistica.QuickSort(vetor);
+            stopwatch.Stop(); // interrompe cronômetro
+            long elapsed_time = stopwatch.ElapsedMilliseconds; // calcula o tempo decorrido
+            MessageBox.Show(this,
+                  "Tamanho do vetor: 10000" +
+                  "\nOrdenação inicial: Aleatorio" +
+                  "\n\nTempo de execução: " + String.Format("{0:F4} seg", elapsed_time / 1000.0) +
+                  "\nNº de comparações: " + OrdenacaoEstatistica.cont_c +
+                  "\nNº de trocas: " + OrdenacaoEstatistica.cont_t,
+                  "Estatísticas do Método QuickSort",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information);
+        }
+
+        private void mergesortToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int[] vetor = new int[10000]; // TODO (tamanho deverá ser escolhido pelo usuário)
+            Preenchimento.Aleatorio(vetor, 1000); // TODO (preenchimento inicial deverá ser escolhido pelo usuário)
+            var stopwatch = new Stopwatch();
+            stopwatch.Start(); // inicia cronômetro
+            OrdenacaoEstatistica.MergeSort(vetor);
+            stopwatch.Stop(); // interrompe cronômetro
+            long elapsed_time = stopwatch.ElapsedMilliseconds; // calcula o tempo decorrido
+            MessageBox.Show(this,
+                  "Tamanho do vetor: 10000" +
+                  "\nOrdenação inicial: Aleatorio" +
+                  "\n\nTempo de execução: " + String.Format("{0:F4} seg", elapsed_time / 1000.0) +
+                  "\nNº de comparações: " + OrdenacaoEstatistica.cont_c +
+                  "\nNº de trocas: " + OrdenacaoEstatistica.cont_t,
+                  "Estatísticas do Método MergeSort",
                   MessageBoxButtons.OK,
                   MessageBoxIcon.Information);
         }
