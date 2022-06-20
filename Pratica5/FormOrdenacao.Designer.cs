@@ -57,7 +57,7 @@
             this.panel.Location = new System.Drawing.Point(0, 27);
             this.panel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1003, 304);
+            this.panel.Size = new System.Drawing.Size(499, 499);
             this.panel.TabIndex = 0;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             // 
@@ -70,7 +70,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1000, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(501, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -154,49 +154,49 @@
             // bolhaToolStripMenuItem1
             // 
             this.bolhaToolStripMenuItem1.Name = "bolhaToolStripMenuItem1";
-            this.bolhaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.bolhaToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.bolhaToolStripMenuItem1.Text = "Bolha";
             this.bolhaToolStripMenuItem1.Click += new System.EventHandler(this.bolhaToolStripMenuItem1_Click_1);
             // 
             // inserçãoToolStripMenuItem1
             // 
             this.inserçãoToolStripMenuItem1.Name = "inserçãoToolStripMenuItem1";
-            this.inserçãoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.inserçãoToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.inserçãoToolStripMenuItem1.Text = "Inserção";
             this.inserçãoToolStripMenuItem1.Click += new System.EventHandler(this.inserçãoToolStripMenuItem1_Click);
             // 
             // seleçãoToolStripMenuItem1
             // 
             this.seleçãoToolStripMenuItem1.Name = "seleçãoToolStripMenuItem1";
-            this.seleçãoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.seleçãoToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.seleçãoToolStripMenuItem1.Text = "Seleção";
             this.seleçãoToolStripMenuItem1.Click += new System.EventHandler(this.seleçãoToolStripMenuItem1_Click);
             // 
             // shellsortToolStripMenuItem1
             // 
             this.shellsortToolStripMenuItem1.Name = "shellsortToolStripMenuItem1";
-            this.shellsortToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.shellsortToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.shellsortToolStripMenuItem1.Text = "Shellsort";
             this.shellsortToolStripMenuItem1.Click += new System.EventHandler(this.shellsortToolStripMenuItem1_Click);
             // 
             // heapsortToolStripMenuItem1
             // 
             this.heapsortToolStripMenuItem1.Name = "heapsortToolStripMenuItem1";
-            this.heapsortToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.heapsortToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.heapsortToolStripMenuItem1.Text = "Heapsort";
             this.heapsortToolStripMenuItem1.Click += new System.EventHandler(this.heapsortToolStripMenuItem1_Click);
             // 
             // quicksortToolStripMenuItem1
             // 
             this.quicksortToolStripMenuItem1.Name = "quicksortToolStripMenuItem1";
-            this.quicksortToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.quicksortToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.quicksortToolStripMenuItem1.Text = "Quicksort";
             this.quicksortToolStripMenuItem1.Click += new System.EventHandler(this.quicksortToolStripMenuItem1_Click);
             // 
             // mergesortToolStripMenuItem1
             // 
             this.mergesortToolStripMenuItem1.Name = "mergesortToolStripMenuItem1";
-            this.mergesortToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.mergesortToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.mergesortToolStripMenuItem1.Text = "Mergesort";
             this.mergesortToolStripMenuItem1.Click += new System.EventHandler(this.mergesortToolStripMenuItem1_Click);
             // 
@@ -225,7 +225,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 323);
+            this.ClientSize = new System.Drawing.Size(501, 529);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
